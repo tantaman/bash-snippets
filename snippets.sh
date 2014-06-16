@@ -23,3 +23,6 @@ for i in {1..5}; do cmd; done
 #run cmd on file w/o find
 
 for i in /some/path/*.whatev; do echo $i; done
+
+#generate a file filled with random bytes
+dd if=/dev/urandom of=garbage.out bs=1m count=6 # this dumps 6mb into "grabage.out"
