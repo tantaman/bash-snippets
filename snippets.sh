@@ -26,3 +26,6 @@ for i in /some/path/*.whatev; do echo $i; done
 
 #generate a file filled with random bytes
 dd if=/dev/urandom of=garbage.out bs=1m count=6 # this dumps 6mb into "grabage.out"
+
+#generate 8 random characters
+dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-8
