@@ -32,3 +32,6 @@ dd if=/dev/urandom count=1 2> /dev/null | uuencode -m - | sed -ne 2p | cut -c-8
 
 #validate an html or xml file
 tidy -errors -q -f error_file.txt the_file.html
+
+#split a file into x-byte chunks
+split -b 40k myfile segment-name-prefix
