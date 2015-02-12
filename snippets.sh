@@ -35,3 +35,6 @@ tidy -errors -q -f error_file.txt the_file.html
 
 #split a file into x-byte chunks
 split -b 40k myfile segment-name-prefix
+
+#mysql one off with no formatting
+mysql -B -N -e "select distinct table_schema from information_schema.tables" 
