@@ -38,3 +38,6 @@ split -b 40k myfile segment-name-prefix
 
 #mysql one off with no formatting
 mysql -B -N -e "select distinct table_schema from information_schema.tables" 
+
+#remove duplicate files?  Gotten from someone else.  Untested.
+find . -type f -exec md5sum '{}' ';' | sort | uniq -f 3 -d | sed -e "s/.*(\(.*\)).*/\1/" | xargs rm -f
