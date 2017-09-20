@@ -47,3 +47,6 @@ for p in `ps aux | grep PATTERN | cut -d' ' -f2`; do sudo kill -9 $p; done
 
 #sum up a the numbers in a stream / file
 stream | paste -sd+ - | bc
+
+#lines in fileA that are not in fileB
+grep -F -x -v -f fileB fileA
