@@ -50,3 +50,6 @@ stream | paste -sd+ - | bc
 
 #lines in fileA that are not in fileB
 grep -F -x -v -f fileB fileA
+
+#recursive inine replace content in a file
+grep -rl "pattern" * | xargs -n 1 -I {} sed -i "s/pattern/replacement/g" {}
