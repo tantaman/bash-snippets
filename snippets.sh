@@ -53,3 +53,6 @@ grep -F -x -v -f fileB fileA
 
 #recursive inine replace content in a file
 grep -rl "pattern" * | xargs -n 1 -I {} sed -i "s/pattern/replacement/g" {}
+
+#sed with captures
+typecheck | grep 'final' | awk -F":" '{print $1}' | xargs -n 1 -I {} sed -i "s/const type TX = \(.*\);/const type TX = \1;\n  const type TY = \1;/" {}
