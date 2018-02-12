@@ -56,3 +56,6 @@ grep -rl "pattern" * | xargs -n 1 -I {} sed -i "s/pattern/replacement/g" {}
 
 #sed with captures
 typecheck | grep 'final' | awk -F":" '{print $1}' | xargs -n 1 -I {} sed -i "s/const type TX = \(.*\);/const type TX = \1;\n  const type TY = \1;/" {}
+
+#split file into lines
+split -l 500 myfile segment
