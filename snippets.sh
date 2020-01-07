@@ -60,44 +60,19 @@ typecheck | grep 'final' | awk -F":" '{print $1}' | xargs -n 1 -I {} sed -i "s/c
 #split file into lines
 split -l 500 myfile segment
 
+# group by & count
+sort test.txt  | uniq -c
+      4 five
+      1 four
+     12 one
+      1 three
+      8 two
+sort test.txt  | uniq -c | sort -n -r
+     12 one
+      8 two
+      4 five
+      1 three
+      1 four
 
-unixite@sandbox:~$ cat test.txt
-one
-one
-one
-two
-two
-one
-five
-one
-one
-two
-five
-two
-one
-one
-one
-two
-two
-one
-five
-one
-one
-two
-three
-four
-two
-five
-unixite@sandbox:~$ sort test.txt  | uniq -c
-      4 five
-      1 four
-     12 one
-      1 three
-      8 two
-unixite@sandbox:~$ sort test.txt  | uniq -c | sort -n -r
-     12 one
-      8 two
-      4 five
-      1 three
-      1 four
-unixite@sandbox:~$
+# commit log for user within time window
+hg log --user mlaw -d "2019-07-01 to 2019-12-31" --style compact
