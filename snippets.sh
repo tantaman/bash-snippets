@@ -76,3 +76,6 @@ sort test.txt  | uniq -c | sort -n -r
 
 # commit log for user within time window
 hg log --user mlaw -d "2019-07-01 to 2019-12-31" --style compact
+
+# chown recurse to me
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/sbin
