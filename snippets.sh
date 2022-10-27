@@ -1,4 +1,5 @@
 #!because-we-don't really want to ever excute this file
+# https://sharats.me/posts/shell-script-best-practices/
 
 #mass inline text replace:
 
