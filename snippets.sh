@@ -80,3 +80,8 @@ hg log --user mlaw -d "2019-07-01 to 2019-12-31" --style compact
 
 # chown recurse to me
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/sbin
+
+## SQLite
+
+# Fill a table with test data
+insert into foo with recursive cte(a,b,c) AS (SELECT random(), random(), random() UNION ALL SELECT random(), random(), random() FROM cte LIMIT 15000) SELECT a,b,c FROM cte;
