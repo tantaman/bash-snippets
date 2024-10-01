@@ -81,6 +81,9 @@ hg log --user mlaw -d "2019-07-01 to 2019-12-31" --style compact
 # chown recurse to me
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/sbin
 
+# delete a bunch of git branches by pattern
+git branch -D `git branch | grep -E 'mlaw/'`
+
 ## SQLite
 
 # Fill a table with test data
