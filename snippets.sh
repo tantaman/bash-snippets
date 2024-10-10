@@ -88,3 +88,8 @@ git branch -D `git branch | grep -E 'mlaw/'`
 
 # Fill a table with test data
 insert into foo with recursive cte(a,b,c) AS (SELECT random(), random(), random() UNION ALL SELECT random(), random(), random() FROM cte LIMIT 15000) SELECT a,b,c FROM cte;
+
+## Web Server
+
+# Serve a directory
+php -S localhost:8080
