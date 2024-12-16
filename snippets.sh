@@ -93,3 +93,8 @@ insert into foo with recursive cte(a,b,c) AS (SELECT random(), random(), random(
 
 # Serve a directory
 php -S localhost:8080
+
+## MLR
+
+# remove a column from a CSV
+mlr --csv cut -x -f labelIDs issues.csv
