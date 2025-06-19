@@ -98,3 +98,8 @@ php -S localhost:8080
 
 # remove a column from a CSV
 mlr --csv cut -x -f labelIDs issues.csv
+
+## Git
+
+# rm loacl branches
+git branch | grep -v -E "(main|\*)" | xargs -n 1 git branch -D
