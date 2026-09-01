@@ -103,3 +103,7 @@ mlr --csv cut -x -f labelIDs issues.csv
 
 # rm loacl branches
 git branch | grep -v -E "(main|\*)" | xargs -n 1 git branch -D
+
+# Find large files (over X gigs)
+mdfind 'kMDItemFSSize > 53687091200'        # Spotlight, instant
+find ~ /Volumes -type f -size +50G 2>/dev/null   # fallback for unindexed paths
